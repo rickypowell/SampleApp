@@ -8,4 +8,4 @@ before_install:
   - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
 
-script: fastlane beta
+script: fastlane test
