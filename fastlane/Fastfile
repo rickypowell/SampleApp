@@ -27,18 +27,26 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan(
-        devices: [
-            "iPhone 5s",
-            "iPhone 6",
-            "iPhone 6s",
-            "iPhone 6 Plus",
-            "iPhone 6s Plus",
-            "iPhone SE",
-            "iPhone 7",
-            "iPhone 7 Plus"
-        ]
-    )
+    puts ENV["TRAVIS_JOB_ID"]
+    devices = [
+        "iPhone 5",
+        "iPhone 5s",
+        "iPhone 6",
+        "iPhone 6s",
+        "iPhone 6 Plus",
+        "iPhone 6s Plus",
+        "iPhone SE",
+        "iPhone 7",
+        "iPhone 7 Plus"
+    ]
+    scan(devices: devices, sdk: "iphonesimulator9.0")
+    scan(devices: devices, sdk: "iphonesimulator9.1")
+    scan(devices: devices, sdk: "iphonesimulator9.2")
+    scan(devices: devices, sdk: "iphonesimulator9.3")
+    scan(devices: devices, sdk: "iphonesimulator10.0")
+    scan(devices: devices, sdk: "iphonesimulator10.1")
+    scan(devices: devices, sdk: "iphonesimulator10.2")
+    scan(devices: devices, sdk: "iphonesimulator10.3")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
