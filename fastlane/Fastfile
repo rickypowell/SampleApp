@@ -28,6 +28,16 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     puts ENV["TRAVIS_JOB_ID"]
+    os = [
+      "9.0",
+      "9.1",
+      "9.2",
+      "9.3",
+      "10.0",
+      "10.1",
+      "10.2",
+      "10.3"
+    ]
     devices = [
         "iPhone 5",
         "iPhone 5s",
@@ -39,14 +49,18 @@ platform :ios do
         "iPhone 7",
         "iPhone 7 Plus"
     ]
-    scan(devices: devices, sdk: "iphonesimulator9.0")
-    scan(devices: devices, sdk: "iphonesimulator9.1")
-    scan(devices: devices, sdk: "iphonesimulator9.2")
-    scan(devices: devices, sdk: "iphonesimulator9.3")
-    scan(devices: devices, sdk: "iphonesimulator10.0")
-    scan(devices: devices, sdk: "iphonesimulator10.1")
-    scan(devices: devices, sdk: "iphonesimulator10.2")
-    scan(devices: devices, sdk: "iphonesimulator10.3")
+    test_devices = []
+    os.each do |item|
+      devices.each do |d|
+        test_devices.push("#{d} #{item}")
+      end
+    end
+    puts "=== Test Devices [BEGIN] ==="
+    test_devices.each do |item|
+      puts "\t#{item}"
+    end
+    puts "=== Test Devices [END] ==="
+    scan(devices: devices)
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
