@@ -27,7 +27,6 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    puts ENV["TRAVIS_JOB_ID"]
     os = [
       "9.0",
       "9.1",
