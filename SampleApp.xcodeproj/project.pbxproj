@@ -47,6 +47,8 @@
 		F81EED891F52686300E3E57D /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81EED8D1F52686300E3E57D /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
 		F81EED8F1F52686300E3E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F884E3D01F579A0900B87DAC /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
+		F884E3D11F579A0900B87DAC /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				F81EED6C1F52686300E3E57D /* SampleApp */,
 				F81EED811F52686300E3E57D /* SampleAppTests */,
 				F81EED8C1F52686300E3E57D /* SampleAppUITests */,
+				F884E3D21F579A1000B87DAC /* Fastlane */,
 				F81EED6B1F52686300E3E57D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +126,15 @@
 				F81EED8F1F52686300E3E57D /* Info.plist */,
 			);
 			path = SampleAppUITests;
+			sourceTree = "<group>";
+		};
+		F884E3D21F579A1000B87DAC /* Fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				F884E3D01F579A0900B87DAC /* Appfile */,
+				F884E3D11F579A0900B87DAC /* Fastfile */,
+			);
+			name = Fastlane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

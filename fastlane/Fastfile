@@ -24,7 +24,18 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(
+        devices: [
+            "iPhone 5s",
+            "iPhone 6",
+            "iPhone 6s",
+            "iPhone 6 Plus",
+            "iPhone 6s Plus",
+            "iPhone SE",
+            "iPhone 7",
+            "iPhone 7 Plus"
+        ]
+    )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
