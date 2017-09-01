@@ -59,6 +59,7 @@ platform :ios do
       puts "\t#{item}"
     end
     puts "=== Test Devices [END] ==="
+    cert
     sigh
     scan(devices: devices)
   end
