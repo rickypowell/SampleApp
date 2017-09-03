@@ -59,6 +59,14 @@ platform :ios do
       puts "\t#{item}"
     end
     puts "=== Test Devices [END] ==="
+    import_certificate(
+      certificate_path: "scripts/certs/dist.cer",
+      certificate_password: ENV["KEY_PASSWORD"] || "default"
+    )
+    import_certificate(
+      certificate_path: "scripts/certs/dist.p12",
+      certificate_password: ENV["KEY_PASSWORD"] || "default"
+    )
     cert
     sigh
     scan(devices: devices)
