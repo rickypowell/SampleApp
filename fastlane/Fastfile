@@ -59,6 +59,9 @@ platform :ios do
       puts "\t#{item}"
     end
     puts "=== Test Devices [END] ==="
+    puts "=== Identities [BEGIN] ==="
+    sh "security find-identity -v -p codesigning"
+    puts "=== Identities [END] ==="
     cert
     sigh
     scan(devices: devices)
