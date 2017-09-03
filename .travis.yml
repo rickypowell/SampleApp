@@ -1,11 +1,9 @@
 osx_image: xcode8.3
 language: objective-c
-xcode_project: SampleApp.xcodeproj # path to your xcodeproj folder
 xcode_scheme: SampleApp
 
 before_install:
-  - gem update --system
-  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
-
-
 script: fastlane test
+env:
+  global:
+    secure: dNIrYP+y8I0LYVFthQTSFro6KuRTwKqgJv001XllHFfZlp8WBcOPdt1tjho0DWJwaVisdJCO1tLzP6KCgGfhFPuxZfaCriTluuAYRSnlx8IF1c/1rbdlJSSoqJHkx2s62Qu8hz3Xd96PPBnR4E8M8n5rZfCesnN46ltt2tJnUeWVdXYogwhSWiAqPGcYdltW5J/Dzuyaayx+J1XHyb3WWdvxsfcBulLnda/gkDxKKo7Kd3Ag8uvdozqGVZ8w3MxSybUQMNMvBK8VFcdceihELMxtuU5/o6OFAqsRVjY5W26soV1RtMqbZrlcBATQbFKaPKTcD9NqAzLj9cwSiEnaeXBUTLl3xKx7FGiVDpj1BEEyAJFbo6th6oW6msymik/SeNHfeXkw3HgkAtnu/PdYTE7tgz8RGRr/WisqvpR6vO5vZY/RakJ2jkzT+KgLNvRjKahi94DsvtKo+ZcxnPI6xfHodN88bAndap4pXMU98u4zRwAzdXd5kOtfPDkF26kuclLCA7xta+9SkgI+syJz9GsITKCZBxZK4iXyJNmhyeqmlKYV/SENTnbhlrXvuSCb1Jz9pR0vS51Q1xv+1TFfeyzhgTKktyWlFym8JNHDJt3iBGLGhq609XiQCHDBN+3SD9eWUJfJ4iTfvD5RTGzTdclK8HuqX62zE/2dKFeQukw=
