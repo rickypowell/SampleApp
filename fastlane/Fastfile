@@ -28,24 +28,24 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     os = [
-      "9.0",
-      "9.1",
-      "9.2",
-      "9.3",
-      "10.0",
-      "10.1",
-      "10.2",
+      # "9.0",
+      # "9.1",
+      # "9.2",
+      # "9.3",
+      # "10.0",
+      # "10.1",
+      # "10.2",
       "10.3"
     ]
     devices = [
-        "iPhone 5",
-        "iPhone 5s",
-        "iPhone 6",
-        "iPhone 6s",
-        "iPhone 6 Plus",
-        "iPhone 6s Plus",
-        "iPhone SE",
-        "iPhone 7",
+        # "iPhone 5",
+        # "iPhone 5s",
+        # "iPhone 6",
+        # "iPhone 6s",
+        # "iPhone 6 Plus",
+        # "iPhone 6s Plus",
+        # "iPhone SE",
+        # "iPhone 7",
         "iPhone 7 Plus"
     ]
     test_devices = []
@@ -89,6 +89,7 @@ platform :ios do
   after_all do |lane|
     # This block is called, only if the executed lane was successful
     increment_build_number
+    clean_build_artifacts
     commit_version_bump
     push_to_git_remote(
       remote_branch: "master", # optional, default is set to local_branch
