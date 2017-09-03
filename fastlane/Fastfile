@@ -61,11 +61,13 @@ platform :ios do
     puts "=== Test Devices [END] ==="
     import_certificate(
       certificate_path: "scripts/certs/dist.cer",
-      certificate_password: ENV["KEY_PASSWORD"] || "default"
+      certificate_password: ENV["KEY_PASSWORD"] || "default",
+      keychain_name: "login.keychain-db"
     )
     import_certificate(
       certificate_path: "scripts/certs/dist.p12",
-      certificate_password: ENV["KEY_PASSWORD"] || "default"
+      certificate_password: ENV["KEY_PASSWORD"] || "default",
+      keychain_name: "login.keychain-db"
     )
     cert
     sigh
