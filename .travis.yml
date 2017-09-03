@@ -8,6 +8,8 @@ env:
   - secure: UcgA/H9LoC3dJKq0a+d6AjJpyq3OJ/g2Z5C9Yt6mTkqEYw4v9EdkOCgucsXXvXRdDJRl5L5T+ViIOVJW/uZpK2LQEG+nKm3zmP/abz8czagevwt9/G4o+SqSEbC5VN/4bOS9zhWFNn/7PsrKqJtu9LWSrjgeWpZ2AuC8fRz8/VcP9ojgjY589YtqstN7ptTkbMxTENvK6wQLrf7YpFDfMbImD49+tNY9svtnCUhzONmKc36+D7tjXaWfV61fPVnIDhmwNZ0kIvENYfB4oH6LjQXI2mWoQrC0PfAVTP/WcP9MLfPkANZWafxdOcUvUp0YcwiV4YWTNI07UNvymK50Kc+ooano102QrnCCzo9J2Y217NknBYZ9VqFIEtxF8qnLN0rq9cwkeaiQ/+XDMXEH9R0bOYZ+tINjXQ5rDDFHAhvJy6oyC+Ost+Qho0UPGW0GCAclJhrilXT/raKwCVDyjarjgTXS5X2rVTRcw3ROIjPEnl8RXbUgqLsbuw/44zL+vTZhYHOM49ULstmYQRvZ+zt1LjPGwXI8ecv4E46uT+MI+q+3+9OVerDSy/oSFdwSRVWumIqbfGqMh9fxdy56UBuHgqF4BNGE5CMRca+zHbsYdjnU/y5W/DqhIJmHLB+MChSVZaNnbeRNN50dFLqypNprv9FASIIiyX+mklxeODA=
 
 before_install:
+  - gem update --system
+  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profiles/AdHocSampleAppDist.mobileprovision.enc -d -a -out scripts/profiles/AdHocSampleAppDist.mobileprovision
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
