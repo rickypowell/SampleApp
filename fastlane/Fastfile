@@ -69,7 +69,7 @@ platform :ios do
       certificate_password: ENV["KEY_PASSWORD"] || "default",
       keychain_name: "login.keychain-db"
     )
-    cert
+    # cert
     sigh
     scan(devices: devices)
   end
