@@ -11,5 +11,7 @@ before_install:
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profiles/AdHocSampleAppDist.mobileprovision.enc -d -a -out scripts/profiles/AdHocSampleAppDist.mobileprovision
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
+  - mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+  - cp "./scripts/profile/AdHocSampleAppDist.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
 
 script: fastlane test
