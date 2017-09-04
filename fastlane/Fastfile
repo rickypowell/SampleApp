@@ -70,7 +70,7 @@ platform :ios do
       keychain_name: "login.keychain-db"
     )
     # cert
-    sigh
+    sigh(adhoc: true, filename: "AdHocSampleAppDist.mobileprovision")
     scan(devices: devices)
   end
 
